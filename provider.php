@@ -2,7 +2,7 @@
   $db_host = '127.0.0.1';
   $db_user = 'root';
   $db_password = 'root';
-  $db_db = 'information_schema';
+  $db_db = 'FourreTout'; // Remplacez "nom_de_votre_base_de_données" par le nom de votre propre base de données
   $db_port = 8889;
 
   $mysqli = new mysqli(
@@ -10,7 +10,7 @@
     $db_user,
     $db_password,
     $db_db,
-	$db_port
+    $db_port
   );
 	
   if ($mysqli->connect_error) {
@@ -22,9 +22,4 @@
 
   echo 'Success: A proper connection to MySQL was made.';
   echo '<br>';
-  echo 'Host information: '.$mysqli->host_info;
-  echo '<br>';
-  echo 'Protocol version: '.$mysqli->protocol_version;
-
-  $mysqli->close();
 ?>
