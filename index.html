@@ -1,32 +1,3 @@
-<?php
-
-require_once 'provider.php';
-
-$query = "SELECT * FROM Test";
-$result = $mysqli->query($query);
-
-if ($result) {
-    // Vérifier s'il y a des données retournées
-    if ($result->num_rows > 0) {
-        // Parcourir chaque ligne de résultat
-        while ($row = $result->fetch_assoc()) {
-            // Utiliser les données récupérées
-            echo "ID: " . $row["testId"] . "<br>";
-        }
-    } else {
-        echo "Aucune donnée trouvée dans la table 'Test'.";
-    }
-    // Libérer le résultat
-    $result->free();
-} else {
-    // En cas d'erreur dans l'exécution de la requête
-    echo "Erreur lors de l'exécution de la requête : " . $mysqli->error;
-}
-
-// Fermer la connexion
-$mysqli->close();
-?>
-
 <html>
     <head>
         <title>Fourre-Tout</title>
@@ -59,7 +30,6 @@ $mysqli->close();
                             <p class="note-date font-12 text-muted">Leni Chabilan</p>
                             <div class="note-content">
                                 <a href="https://geoffroycochard.github.io/iuto.but2.js/" ><p class="note-inner-content text-muted">https://geoffroycochard.github.io/iuto.but2.js/ </p></a>
-</p>
                             </div>
                             <div class="d-flex align-items-center">
                                 <span class="mr-1"><i class="fa fa-star favourite-note"></i></span>
